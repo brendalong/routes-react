@@ -3,9 +3,9 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 
 var app = firebase.initializeApp({
-    apiKey: "ReallyLongNumberGoesHere",
-    authDomain: "your-database.firebaseapp.com",
-    databaseURL: "https://your-database.firebaseio.com"
+    apiKey: "AIzaSyA60-RA1ZHZRXrmmAH-gsp1h7OpRFYWugY",
+    authDomain: "d18-demo.firebaseapp.com",
+    databaseURL: "https://d18-demo.firebaseio.com"
 });
 
 var db = firebase.database(app);
