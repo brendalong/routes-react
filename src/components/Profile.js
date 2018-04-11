@@ -3,7 +3,7 @@ import Repos from './Github/Repos';
 import UserProfile from './Github/UserProfile';
 import Notes from './Notes/Notes';
 import helpers from '../utils/helpers';
-import base from '../rebase';
+import base from '../base';
 import PropTypes from 'prop-types';
 
 console.log(
@@ -27,6 +27,10 @@ class Profile extends React.Component {
     });
 
     helpers.getGithubInfo(username).then(dataObj => {
+      console.log("dataObj", dataObj)
+      if (dataObj.bio == null){
+        dataObj.bio = "";
+      }
       this.setState({
         bio: dataObj.bio,
         repos: dataObj.repos
