@@ -1,7 +1,7 @@
 // import axios from 'axios';
 
 function getRepos(username){
-   fetch(`https://api.github.com/users/${username}/repos`)
+   return fetch(`https://api.github.com/users/${username}/repos`)
    .then(function(response) {
     console.log("what is response username", response);
     return response.json();
@@ -15,7 +15,7 @@ function getRepos(username){
 };
 
 function getUserInfo(username){
-  fetch(`https://api.github.com/users/${username}`)
+  return fetch(`https://api.github.com/users/${username}`)
   .then(function(response) {
     console.log("what is response info", response);
     return response.json();
@@ -36,6 +36,7 @@ var helpers = {
   getGithubInfo(username){
     return Promise.all([getRepos(username), getUserInfo(username)])
       .then((arr) => {
+        console.log("what is array", arr[1].data);
         return {
           repos: arr[0].data,
           bio: arr[1].data

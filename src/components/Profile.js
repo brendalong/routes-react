@@ -6,9 +6,9 @@ import helpers from '../utils/helpers';
 import base from '../base';
 import PropTypes from 'prop-types';
 
-console.log(
-  'Please change to your own firebase address in app/components/Profile.js'
-);
+// console.log(
+//   'Please change to your own firebase address in app/components/Profile.js'
+// );
 
 class Profile extends React.Component {
   constructor(props) {
@@ -27,10 +27,7 @@ class Profile extends React.Component {
     });
 
     helpers.getGithubInfo(username).then(dataObj => {
-      console.log("dataObj", dataObj)
-      if (dataObj.bio == null){
-        dataObj.bio = "";
-      }
+      console.log("dataObj", dataObj);
       this.setState({
         bio: dataObj.bio,
         repos: dataObj.repos
